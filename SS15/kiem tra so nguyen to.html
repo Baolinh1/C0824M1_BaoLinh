@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="num">
+<button onclick="showLessNum()">Check</button>
+<p id="result"></p>
+<script>
+    function showLessNum() {
+        let maxPrime = +document.getElementById('num').value;
+        let result = "";
+        for (let num = 2; num < maxPrime; num ++) {
+            if (isPrime(num)) {
+                result += `${num} là số nguyên tố<br>`;
+            }
+        }
+        document.getElementById("result").innerHTML = result;
+    }
+
+    function isPrime(num) {
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+</script>
+</body>
+</html>
